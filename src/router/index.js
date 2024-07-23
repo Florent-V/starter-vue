@@ -5,6 +5,7 @@ import ProductView from '@/views/ProductView.vue'
 import HelloView from '@/views/HelloView.vue'
 import FeaturedCardsView from '@/views/FeaturedCardsView.vue'
 import NotFound from '@/views/NotFound.vue'
+import NProgress from '@/plugins/nprogress'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,6 +73,14 @@ router.beforeEach((to) => {
   const descriptionElement = document.querySelector('meta[name="description"]')
 
   descriptionElement.setAttribute('content', description || defaultDescription)
+})
+
+router.beforeEach((to, from) => {
+  if (to.path !== from.path)
+    NProgress.start()
+})
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

@@ -40,11 +40,11 @@ const plans = reactive([
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <div class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <div class="product-page text-center">
       <h1 class="text-4xl mb-8">{{ product.name }}</h1>
       <div class="flex flex-wrap justify-center gap-8">
-        <div class="bg-gray-800 dark:bg-gray-700 text-white p-6 rounded-lg shadow-md w-64" v-for="(plan, index) in plans" :key="index">
+        <div class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white p-6 rounded-lg shadow-md w-64" v-for="(plan, index) in plans" :key="index">
           <h2 class="text-2xl font-semibold mb-4">{{ plan.name }}</h2>
           <p class="text-xl text-yellow-400 mb-6">{{ plan.price }}</p>
           <ul class="list-none p-0">

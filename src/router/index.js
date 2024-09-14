@@ -1,41 +1,53 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import WelcomeHomeView from '../views/WelcomeHomeView.vue'
+import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
-import ProductView from '@/views/ProductView.vue'
 import HelloView from '@/views/HelloView.vue'
-import FeaturedCardsView from '@/views/FeaturedCardsView.vue'
 import NotFound from '@/views/NotFound.vue'
 import NProgress from '@/plugins/nprogress'
+import DemoProductView from '@/views/Demo/DemoProductView.vue'
+import DemoFeaturedCardsView from '@/views/Demo/DemoFeaturedCardsView.vue'
+import ProductCrudView_1 from '@/views/ProductCrudView_1.vue'
+import ProductCrudView_2 from '@/views/ProductCrudView_2.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      name: 'welcome',
+      meta: {
+        title: 'Welcome',
+        description: 'This is the Welcome page'
+      },
+      component: WelcomeHomeView
+    },
+    {
+      path: '/home',
       name: 'home',
       meta: {
         title: 'Home',
-        description: 'This is the home page'
+        description: 'This is the Home page'
       },
       component: HomeView
     },
     {
-      path: '/product',
-      name: 'product',
+      path: '/product-crud-1',
+      name: 'product1',
       meta: {
-        title: 'Product',
-        description: 'This is the product page'
+        title: 'ProductCrudView_1',
+        description: 'This is the ProductCrudView_1 page'
       },
-      component: ProductView
+      component: ProductCrudView_1
     },
     {
-      path: '/features',
-      name: 'features',
+      path: '/product-crud-2',
+      name: 'product2',
       meta: {
-        title: 'Features',
-        description: 'This is the Features page'
+        title: 'ProductCrudView_2',
+        description: 'This is the ProductCrudView_2 page'
       },
-      component: FeaturedCardsView
+      component: ProductCrudView_2
     },
     {
       path: '/hello/:name',
@@ -45,6 +57,24 @@ const router = createRouter({
         description: 'This is the hello page'
       },
       component: HelloView
+    },
+    {
+      path: '/demo-product',
+      name: 'demo-product',
+      meta: {
+        title: 'Demo Product',
+        description: 'This is the demo product page'
+      },
+      component: DemoProductView
+    },
+    {
+      path: '/demo-features',
+      name: 'demo-features',
+      meta: {
+        title: 'Demo Features',
+        description: 'This is the Demo Features page'
+      },
+      component: DemoFeaturedCardsView
     },
     {
       path: '/about',

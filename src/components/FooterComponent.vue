@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <footer class="bg-white dark:bg-gray-800 shadow-md text-gray-800 dark:text-gray-100">
-    <div class="container mx-auto px-4 py-8">
+  <footer class="bg-blue-900 dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+    <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h3 class="text-xl font-semibold mb-4">About TechVerse</h3>

@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref, onMounted } from 'vue';
 
 const product = reactive({
   name: 'Awesome Product'
@@ -37,22 +37,27 @@ const plans = reactive([
     ]
   }
 ]);
+
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <div class="flex-grow text-gray-900 dark:text-gray-100 py-4">
     <div class="product-page text-center">
-      <h1 class="text-4xl mb-8">{{ product.name }}</h1>
+      <h1 class="text-4xl font-bold mb-8 text-blue-800 dark:text-yellow-300">{{ product.name }}</h1>
       <div class="flex flex-wrap justify-center gap-8">
-        <div class="bg-gray-800 dark:bg-gray-700 text-white p-6 rounded-lg shadow-md w-64" v-for="(plan, index) in plans" :key="index">
-          <h2 class="text-2xl font-semibold mb-4">{{ plan.name }}</h2>
-          <p class="text-xl text-yellow-400 mb-6">{{ plan.price }}</p>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-700 p-6 w-64 transition duration-300 transform hover:scale-105"
+          v-for="(plan, index) in plans"
+          :key="index"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{{ plan.name }}</h2>
+          <p class="text-3xl font-bold text-blue-600 dark:text-yellow-400 mb-6">{{ plan.price }}</p>
           <ul class="list-none p-0">
             <li class="flex items-center mb-3" v-for="(feature, index) in plan.features" :key="index">
-              <span :class="{'text-green-500': feature.included, 'text-red-500': !feature.included}">
-                {{ feature.included ? '✔️' : '❌' }}
-              </span>
-              <span class="ml-2">{{ feature.name }}</span>
+            <span :class="{'text-green-500': feature.included, 'text-red-500': !feature.included}">
+              {{ feature.included ? '✔️' : '❌' }}
+            </span>
+              <span class="ml-2 text-gray-700 dark:text-gray-300">{{ feature.name }}</span>
             </li>
           </ul>
         </div>
@@ -60,6 +65,7 @@ const plans = reactive([
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .product-page {

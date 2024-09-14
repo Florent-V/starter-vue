@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="bg-gray-800 dark:bg-gray-700 text-white p-6 rounded-lg shadow-md">
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-700 p-6 transition duration-300 transform hover:scale-105">
     <div class="flex items-center mb-4">
       <div class="mr-4">
         <slot name="icon"></slot>

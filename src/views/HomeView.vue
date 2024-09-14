@@ -8,21 +8,21 @@ const featuredProducts = ref([
     name: 'QuantumX Smartphone',
     description: 'Harness the power of quantum computing in your pocket.',
     price: 1299.99,
-    image: '/images/quantum-smartphone.jpg'
+    image: 'https://placehold.co/600x400'
   },
   {
     id: 2,
     name: 'NeuraPad Pro',
     description: 'A neural interface tablet that responds to your thoughts.',
     price: 1799.99,
-    image: '/images/neurapad.jpg'
+    image: 'https://placehold.co/600x400'
   },
   {
     id: 3,
     name: 'HoloHub 360',
     description: 'Transform your living space with full-room holographic projections.',
     price: 899.99,
-    image: '/images/holohub.jpg'
+    image: 'https://placehold.co/600x400'
   }
 ])
 </script>
